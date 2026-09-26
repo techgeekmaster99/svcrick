@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SV Prime Cricket League — My Profile</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>SV PRIME CRICKET LEAGUE</h1>
+    <div class="topbar-right">
+      <span id="welcome"></span>
+      <button id="logout">Logout</button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <nav class="sidebar">
+      <a href="profile.html" class="active">My Profile</a>
+      <a href="all-players.html">All Players</a>
+      <a href="teams.html">Teams</a>
+    </nav>
+
+    <main class="content">
+      <div class="card">
+        <h2>Add a Player</h2>
+        <p>Add anyone from your flat who wants to join the league (you can add more than one).</p>
+
+        <form id="player-form">
+          <label for="player-name">Name</label>
+          <input type="text" id="player-name" placeholder="Player name" required />
+
+          <label for="player-mobile">Mobile Number</label>
+          <input
+            type="tel"
+            id="player-mobile"
+            placeholder="10-digit mobile number"
+            pattern="[0-9]{10}"
+            title="Enter a 10-digit mobile number"
+            required
+          />
+
+          <label>Role</label>
+          <div class="role-options">
+            <label class="role-option"><input type="radio" name="role" value="Bowler" required /> Bowler</label>
+            <label class="role-option"><input type="radio" name="role" value="Batsman" /> Batsman</label>
+            <label class="role-option"><input type="radio" name="role" value="All-Rounder" /> All-Rounder</label>
+          </div>
+
+          <p class="error" id="error"></p>
+
+          <div class="save-row">
+            <span id="status"></span>
+            <button type="submit">ADD PLAYER</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card wide teams-list">
+        <h2>Players From My Flat</h2>
+        <div id="my-players"><p>Loading…</p></div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="js/profile.js"></script>
+</body>
+</html>

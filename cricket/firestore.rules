@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Each flat can read/write only its own account doc (password-change flag).
+    match /users/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // Any signed-in flat can browse all registered players (needed for the
+    // "All Players" list and for picking players into a team). A flat can
+    // create its own player entries. Deleting/editing a player entry is
+    // allowed for whoever owns it, OR for the admin flat (b-206).
+    match /players/{playerId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null && request.resource.data.ownerUid == request.auth.uid;
+      allow update, delete: if request.auth != null && (
+        resource.data.ownerUid == request.auth.uid ||
+        request.auth.token.email == "b-206@svprime.local"
+      );
+    }
+
+    // Any signed-in flat can view and create teams, but only the admin flat
+    // (b-206) can delete a team (freeing its players back up for another team).
+    match /teams/{teamId} {
+      allow read, create, update: if request.auth != null;
+      allow delete: if request.auth != null && request.auth.token.email == "b-206@svprime.local";
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SV Prime Cricket League — All Players</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>SV PRIME CRICKET LEAGUE</h1>
+    <div class="topbar-right">
+      <span id="welcome"></span>
+      <button id="logout">Logout</button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <nav class="sidebar">
+      <a href="profile.html">My Profile</a>
+      <a href="all-players.html" class="active">All Players</a>
+      <a href="teams.html">Teams</a>
+    </nav>
+
+    <main class="content">
+      <div class="card wide">
+        <h2>All Players</h2>
+        <p class="error" id="error"></p>
+
+        <table>
+          <thead id="players-head">
+            <tr>
+              <th>Flat Number</th>
+              <th>Name</th>
+              <th>Mobile Number</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody id="players-body"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="js/all-players.js"></script>
+</body>
+</html>

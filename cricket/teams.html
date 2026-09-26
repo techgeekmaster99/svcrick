@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SV Prime Cricket League — Teams</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>SV PRIME CRICKET LEAGUE</h1>
+    <div class="topbar-right">
+      <span id="welcome"></span>
+      <button id="logout">Logout</button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <nav class="sidebar">
+      <a href="profile.html">My Profile</a>
+      <a href="all-players.html">All Players</a>
+      <a href="teams.html" class="active">Teams</a>
+    </nav>
+
+    <main class="content">
+      <div class="card wide">
+        <h2>Create Team</h2>
+
+        <form id="team-form">
+          <label for="team-name">Team Name</label>
+          <input type="text" id="team-name" placeholder="e.g. Team Falcons" required />
+
+          <label>Select Players</label>
+          <div class="player-checklist" id="player-checklist">
+            <p id="players-loading">Loading players…</p>
+          </div>
+
+          <p class="error" id="error"></p>
+
+          <div class="save-row">
+            <span id="status"></span>
+            <button type="submit">CREATE TEAM</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card wide teams-list">
+        <h2>All Teams</h2>
+        <div id="teams-container"><p>Loading teams…</p></div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="js/teams.js"></script>
+</body>
+</html>

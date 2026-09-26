@@ -1,0 +1,42 @@
+2026-09-26 18:37:04.416 [debug] Initializing ConfigManager from environment variables
+2026-09-26 18:37:04.417 [debug] Loaded config from environment (sensitive data redacted):
+2026-09-26 18:37:04.417 [debug] {
+  "host": "wiki.corp.adobe.com",
+  "authMethod": "[REDACTED]",
+  "port": 1984,
+  "assetsOutputDir": "./cursor-wiki-mcp/assets",
+  "assets": {
+    "extractAssets": false,
+    "outputDir": "./wiki-mcp/assets",
+    "filenamePrefix": "asset-",
+    "createOutputDirs": true,
+    "useAbsolutePath": true,
+    "assetTypes": [
+      "image",
+      "pdf",
+      "document",
+      "attachment",
+      "plantuml"
+    ]
+  }
+}
+2026-09-26 18:37:04.417 [debug] ConfigManager initialized
+2026-09-26 18:37:04.837 [info] Initializing MCP Server...
+2026-09-26 18:37:04.837 [info] 📦 Build ID: build_1788167230217_uxj9ifrco
+2026-09-26 18:37:04.838 [info] 📦 Version: 1.0.0-1788167230217
+2026-09-26 18:37:04.838 [info] 📦 Build Date: 2026-08-31T09:07:10.217Z
+2026-09-26 18:37:04.838 [info] 📦 Timestamp: 1788167230217
+2026-09-26 18:37:04.841 [debug] Creating authenticated Confluence client via AuthenticationManager
+2026-09-26 18:37:04.842 [debug] Normalized host: wiki.corp.adobe.com
+2026-09-26 18:37:04.842 [info] Using Personal Access Token authentication method
+2026-09-26 18:37:04.842 [info] Confluence client created successfully for host: wiki.corp.adobe.com
+2026-09-26 18:37:04.843 [info] Registered expert-wiki-editing-workflow prompt
+2026-09-26 18:37:04.843 [info] Registered expert-wiki-editor prompt
+2026-09-26 18:37:04.843 [info] Registered plantuml_diagram_creator prompt
+2026-09-26 18:37:04.843 [info] Registered prompts: expert_wiki_editing_workflow, expert_wiki_editor, plantuml_diagram_creator
+2026-09-26 18:37:04.843 [info] Prompt "expert_wiki_editing_workflow" registered: has description=true, has callback=true
+2026-09-26 18:37:04.843 [info] Prompt "expert_wiki_editor" registered: has description=true, has callback=true
+2026-09-26 18:37:04.844 [info] Prompt "plantuml_diagram_creator" registered: has description=true, has callback=true
+2026-09-26 18:37:04.844 [info] MCP Server initialized successfully
+2026-09-26 18:37:04.845 [info] Wiki MCP Server connected via stdio
+2026-09-26 18:37:04.845 [info] Wiki MCP Server started successfully with stdio transport
